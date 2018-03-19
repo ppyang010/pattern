@@ -33,6 +33,8 @@ public class Prototype implements Cloneable,Serializable {
      * 使用java clone 方式 深拷贝
      * 循环clone
      * 如果要实现深度拷贝，则需要将实现了Cloneable接口并重写了clone方法的类中，所有的引用类型也全部实现Cloneable接口并重写clone方法，而且需要将引用类型的属性全部拷贝一遍。
+     * 不过实际当中我们使用原型模式时，也可以写一个基类实现Cloneable接口重写clone方法，然后让需要具有拷贝功能的子类继承自该类，这是一种节省代码量的常用方式
+     *
      * @return
      */
     protected Prototype deepClone() {

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PatternApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PatternApplication.class, args);
+//		SpringApplication.run(PatternApplication.class, args);
+		new Out();
 	}
 }
