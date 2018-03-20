@@ -14,13 +14,13 @@ public class HouseOwnerA implements HouseRent,HouseClean{
      */
     @Override
     public void rentOut(String who) {
-        System.out.printf("我出租一套三室一厅的房子给%s /n",who);
-        System.out.printf("我和%s签订合同",who);
+        System.out.printf("我出租一套三室一厅的房子给%s \n",who);
+        System.out.printf("我和%s签订合同\n",who);
     }
 
 
     @Override
-    public void cleanHouse() {
+    public void cleanHouse(String s) {
         System.out.println("清理房间");
     }
 }

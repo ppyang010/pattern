@@ -5,6 +5,6 @@ package com.caicy.pattern.proxy;
  */
 public interface HouseClean {
 
-    void cleanHouse();
+    void cleanHouse(String s);
 
 }
