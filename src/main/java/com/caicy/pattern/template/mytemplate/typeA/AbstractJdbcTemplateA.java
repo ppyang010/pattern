@@ -9,10 +9,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 单纯的使用模板方法
+ * @param <T>
+ */
 public abstract class AbstractJdbcTemplateA<T> {
 
 
-    public  <T> List execute(String sql, Object [] args){
+    public   List execute(String sql, Object [] args){
         try {
 
             //在一个应用中 123 567这些步骤是重复的
@@ -52,7 +56,7 @@ public abstract class AbstractJdbcTemplateA<T> {
         int rowNum = 1;
         List list =new ArrayList<T>();
         while(resultSet.next()){
-            T obj = (T) rowMap(resultSet);
+            T obj =  rowMap(resultSet);
             list.add(obj);
         }
         return list;

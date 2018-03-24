@@ -4,6 +4,8 @@ import com.caicy.pattern.template.entity.User;
 import com.caicy.pattern.template.jdbc.DBTool;
 import com.caicy.pattern.template.mytemplate.typeA.UserDaoA;
 import com.caicy.pattern.template.mytemplate.typeA.UserTemplateA;
+import com.caicy.pattern.template.mytemplate.typeB.MyJdbcTemplate;
+import com.caicy.pattern.template.mytemplate.typeB.UserDaoB;
 
 import java.util.List;
 
@@ -16,6 +18,12 @@ public class App {
         System.out.println("my jdbcTemplate 模板方法模式 使用抽象类的方式");
         UserDaoA userDaoA = new UserDaoA();
         userDaoA.setMyJdbcTemplate(new UserTemplateA());
+        list = userDaoA.listUsers();
+        show(list);
+
+        System.out.println("my jdbcTemplate 模板方法模式和策略模式公用 使用组合的方式");
+        UserDaoB userDaoB = new UserDaoB();
+        userDaoB.setMyJdbcTemplate(new MyJdbcTemplate());
         list = userDaoA.listUsers();
         show(list);
     }

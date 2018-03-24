@@ -1,6 +1,7 @@
 package com.caicy.pattern.template.mytemplate.typeB;
 
 import com.caicy.pattern.template.jdbc.DBTool;
+import com.sun.org.apache.xerces.internal.xs.datatypes.ObjectList;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,10 +10,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyJdbcTemplate<T> {
+public class MyJdbcTemplate {
 
 
-    public  <T> List execute(String sql, Object [] args, RowMapper rowMapper){
+    public   List execute(String sql, Object [] args, RowMapper rowMapper){
         try {
 
             //在一个应用中 123 567这些步骤是重复的
@@ -45,11 +46,11 @@ public class MyJdbcTemplate<T> {
     }
 
 
-    private List parseResultSet(ResultSet resultSet, RowMapper rowMapper) throws Exception {
+    private List<?> parseResultSet(ResultSet resultSet, RowMapper rowMapper) throws Exception {
         int rowNum = 1;
-        List list =new ArrayList<T>();
+        List list =new ArrayList<Object>();
         while(resultSet.next()){
-            T obj = (T) rowMapper.mapRow(resultSet, rowNum++);
+            Object obj =  rowMapper.mapRow(resultSet, rowNum++);
             list.add(obj);
         }
         return list;
