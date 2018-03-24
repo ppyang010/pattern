@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractJdbcTemplate<T> {
+public abstract class AbstractJdbcTemplateA<T> {
 
 
     public  <T> List execute(String sql, Object [] args){
@@ -26,11 +26,7 @@ public abstract class AbstractJdbcTemplate<T> {
             ResultSet resultSet = executeQuery(statement,args);
 
             //4、解析结果集
-            List list =new ArrayList<T>();
-            while(resultSet.next()){
-                T obj = (T) parseResultSet(resultSet);
-                list.add(obj);
-            }
+            List list = parseResultSet(resultSet);
 
             //5、关闭结果集
             closeResultSet(resultSet);
@@ -52,9 +48,14 @@ public abstract class AbstractJdbcTemplate<T> {
 
     public  abstract  T rowMap(ResultSet resultSet) throws SQLException ;
 
-    private T parseResultSet(ResultSet resultSet) throws SQLException {
-        T user = rowMap(resultSet);
-        return user;
+    private List parseResultSet(ResultSet resultSet) throws SQLException {
+        int rowNum = 1;
+        List list =new ArrayList<T>();
+        while(resultSet.next()){
+            T obj = (T) rowMap(resultSet);
+            list.add(obj);
+        }
+        return list;
     }
 
 
