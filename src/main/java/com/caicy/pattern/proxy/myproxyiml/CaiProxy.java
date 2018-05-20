@@ -1,15 +1,13 @@
 package com.caicy.pattern.proxy.myproxyiml;
 
-import org.apache.tools.ant.taskdefs.Classloader;
-
 import javax.tools.JavaCompiler;
 import javax.tools.JavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import java.net.URLClassLoader;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class CaiProxy {
