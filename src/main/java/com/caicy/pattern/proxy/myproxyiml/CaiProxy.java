@@ -91,6 +91,7 @@ public class CaiProxy {
 
             sb.append("CaiInvocationHandler h;"+ln);
             //构造函数
+            //这里保存了被代理的原始对象
             sb.append("public "+proxyClassName+"("+h.getClass().getName()+" h) {"+ln);
             sb.append("this.h = h;"+ln);
             sb.append("}"+ln);
