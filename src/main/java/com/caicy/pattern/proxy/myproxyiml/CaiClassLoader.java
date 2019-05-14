@@ -10,7 +10,7 @@ public class CaiClassLoader extends ClassLoader {
 
     public CaiClassLoader(){
         String classPath = CaiClassLoader.class.getResource("").getPath();
-        this.classPathFile = new File(classPath);
+        CaiClassLoader.classPathFile = new File(classPath);
     }
 
     /**
