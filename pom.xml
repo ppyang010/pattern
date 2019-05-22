@@ -88,5 +88,19 @@
 		</plugins>
 	</build>
 
+	<repositories>
+		<!--使用阿里云镜像-->
+		<repository>
+			<id>aliyun</id>
+			<name>aliyun</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+		</repository>
+		<!--使用Spring镜像-->
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/libs-milestone</url>
+		</repository>
+	</repositories>
 
 </project>
