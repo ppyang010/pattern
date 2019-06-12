@@ -24,9 +24,17 @@ public class CGLibDynamicProxy implements MethodInterceptor{
      * @param obj 生成的代理类
      * @param method 调用的真实对象方法
      * @param args 调用的真实对象方法的参数
-     * @param methodProxy 
-     * @return
-     * @throws Throwable
+     * @param MethodProxy 表示对方法的代理，invokeSuper方法表示对被代理对象方法的调用
+     */
+    /**
+     Class clazzB = B.class;
+     Class clazzD = D.class;
+     boolean isFather = clazzD.isAssignableFrom(clazzB));
+     if(isFather){
+     System.out.println("D是B的父类");
+     }else{
+     System.out.println("D不是B的父类");
+     }
      */
     @Override
     public Object intercept(Object obj, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
